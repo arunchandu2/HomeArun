@@ -1,0 +1,76 @@
+﻿@model HomeArun.Models.UploadedDocument
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h1>Edit</h1>
+
+<h4>UploadedDocument</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="DocumentId" />
+            <div class="form-group">
+                <label asp-for="PanCard" class="control-label"></label>
+                <input asp-for="PanCard" class="form-control" />
+                <span asp-validation-for="PanCard" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="AadharCard" class="control-label"></label>
+                <input asp-for="AadharCard" class="form-control" />
+                <span asp-validation-for="AadharCard" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="SalarySlip" class="control-label"></label>
+                <input asp-for="SalarySlip" class="form-control" />
+                <span asp-validation-for="SalarySlip" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Loa" class="control-label"></label>
+                <input asp-for="Loa" class="form-control" />
+                <span asp-validation-for="Loa" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Noc" class="control-label"></label>
+                <input asp-for="Noc" class="form-control" />
+                <span asp-validation-for="Noc" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Agreement" class="control-label"></label>
+                <input asp-for="Agreement" class="form-control" />
+                <span asp-validation-for="Agreement" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="DocumentverifiedStatus" class="control-label"></label>
+                <input asp-for="DocumentverifiedStatus" class="form-control" />
+                <span asp-validation-for="DocumentverifiedStatus" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ApplicationId" class="control-label"></label>
+                <input asp-for="ApplicationId" class="form-control" />
+                <span asp-validation-for="ApplicationId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="LoanApprovalStatus" class="control-label"></label>
+                <input asp-for="LoanApprovalStatus" class="form-control" />
+                <span asp-validation-for="LoanApprovalStatus" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+<br />
+
+<div>
+   @* <a asp-action="Index">Back to List</a>*@
+     <a asp-controller ="UploadedDocuments" asp-action ="Display">submit</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

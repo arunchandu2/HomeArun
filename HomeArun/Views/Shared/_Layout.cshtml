@@ -1,0 +1,142 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - HomeLoan</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/HomeLoanManagementSysytem.styles.css" asp-append-version="true" />
+    <style>
+      
+    .navbar1 {
+    overflow: hidden;
+   
+}
+
+
+
+.dropdown1 {
+    float: left;
+    overflow: hidden;
+}
+
+
+.dropdown-content1 {
+    display: none;
+    position: absolute;
+     background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+   
+    z-index: 1;
+}
+.dropdown1 .dropbtn1{
+     padding: 9px 5px;
+
+}
+
+.dropdown-content1 a {
+        float: none;
+      
+      
+        text-decoration: none;
+        display: block;
+        text-align: left;
+    }
+
+.dropdown1:hover .dropdown-content1 {
+        display: block;
+    }
+    .header img {
+  float: left;
+  width: 50px;
+  height: 50px;
+   background: #555;
+
+  
+}
+
+
+  
+
+
+   </style>
+</head>
+<body>
+   
+    <header >
+        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-light border-bottom box-shadow mb-3">
+            <div class="container-fluid">
+                <div class = "header">
+                 <img src="https://www.axisbank.com/images/default-source/revamp_new/loans/mobile/home-loan-mob.jpg" />
+                 </div>
+       @*         /<a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">HomeLoan</a>*@
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
+                        aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
+                    <ul class="navbar-nav flex-grow-1">
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
+                        </li>
+                      
+
+
+                   
+                        <li >
+                            <div class="navbar1">
+                                  <div class="dropdown1">
+                                    <p class="dropbtn1">Calculator
+                                   
+                                    </p>
+                                    <div class="dropdown-content1">
+                                        <a class="nav-link text-dark" asp-controller="Emi" asp-action="Calculate">EMI Calculator</a>
+                                        <a class="nav-link text-dark"  asp-controller="Emi" asp-action="CalculateLoanAmount" >Loan Eligiblity Amount</a>
+                                     
+                                    </div>
+                                  </div>
+                                </div>
+                        </li>
+
+                         <li class="nav-item">
+                            <a class="nav-link text-dark" asp-area="" asp-controller="IncomeDetails" asp-action="Create1">Application</a>
+                        </li>
+                         <li class="nav-item">
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Login" asp-action="create">Login</a>
+                        </li>
+                         <li class="nav-item">
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="faq">FaQ</a>
+                        </li>
+                           <li class="nav-item">
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="aboutus">About us</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+                        </li>
+                        
+                       
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+    
+    <div class="container">
+        <main role="main" class="pb-3">
+            @RenderBody()
+        </main>
+    </div>
+
+    <footer class="border-top footer text-muted">
+        <div class="container">
+            &copy; 2022 - HomeLoanManagementSysytem - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+        </div>
+    </footer>
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>

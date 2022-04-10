@@ -1,0 +1,96 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+
+<style>      
+body {
+font-family:Arial;
+}
+.faq {
+width:70%;
+margin: 0 auto;
+}
+.faq div {
+border: 1px solid #000;
+margin: 5px 0px;
+background-color:aquamarine;
+}
+.question {
+font-size:18px;
+background-color:#ddd;
+margin:0px;
+padding: 15px;
+}
+.answer {
+font-size:12px;
+margin:0px;
+padding: 0px 15px;
+line-height:2;
+max-height:0px;
+overflow:hidden;
+transition:2s;
+}
+.opener
+{
+font-size:25px;
+float:right;
+line-height:0.8;
+cursor: pointer;
+}
+h1{
+    color: blue;
+    margin-left:80px;
+}
+</style>  
+
+<script>
+function faq(ele)
+{
+var x = ele.parentElement.nextElementSibling.style.cssText;
+if(x=='max-height: 500px;')
+{    
+ele.style.cssText='transform: rotate(0deg);';    
+ele.parentElement.nextElementSibling.style.cssText = "transition:0.3s;max-height:0px;";    
+}
+else
+{
+ele.style.cssText='transform: rotate(45deg);';  
+ele.parentElement.nextElementSibling.style.cssText = "max-height:500px;";
+}
+}
+</script>
+
+<h1> Frequently Asked Questions </h1>
+<div class="faq">
+
+<div>
+ <p class="question">How do you calculate the loan amount eligibility? <span onclick='faq(this)' class="opener">+</span></p>
+ <p class="answer">The loan amount depends on your repayment capability and is restricted to a maximum of 80% of the agreement value or the market value whichever is lower. Repayment capacity takes into consideration factors such as income, age, qualifications, number of dependants, spouse's income, assets, liabilities, stability, continuity of occupation and savings history. And, of course, our main concern is to make sure that you can comfortably repay the loan amount.</p>
+</div>
+
+<div>    
+ <p class="question">When can I apply loan? <span onclick='faq(this)' class="opener">+</span></p>
+ <p class="answer">The moment you decide to buy a home, you can put in your application for a home loan. Yes, you can apply for a home loan even before you have selected the property. The loan amount would be sanctioned or approved for you, based on your repayment capability.</p>
+</div>
+
+<div>    
+ <p class="question">What is an EMI? <span onclick='faq(this)' class="opener">+</span></p>
+ <p class="answer">An EMI refers to an Equated Monthly Instalment. It is a fixed amount which you pay every month towards your loan. It comprises of both, principal repayment and interest payment.</p>  
+</div>
+
+<div>    
+ <p class="question">How will I be intimated if my loan has got Sanctioned / Rejected?
+ <span onclick='faq(this)' class="opener">+</span></p>
+ <p class="answer">Decision shall be conveyed in writing within a maximum period of one month from the date of receipt of application. Date of application shall be once complete set of documents and required details are furnished to the bank.</p>  
+</div>
+
+<div>    
+ <p class="question">Do I get a tax benefit on the loan?
+ <span onclick='faq(this)' class="opener">+</span></p>
+ <p class="answer">Yes. Resident Indians are eligible for certain tax benefits on principal and interest components of a loan under the Income Tax Act, 1961.</p>  
+</div>
+
+
+</div>

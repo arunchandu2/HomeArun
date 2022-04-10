@@ -1,0 +1,83 @@
+﻿@model IEnumerable<HomeArun.Models.UploadedDocument>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.PanCard)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.AadharCard)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.SalarySlip)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Loa)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Noc)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Agreement)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DocumentverifiedStatus)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ApplicationId)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.LoanApprovalStatus)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.PanCard)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.AadharCard)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.SalarySlip)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Loa)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Noc)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Agreement)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DocumentverifiedStatus)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ApplicationId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.LoanApprovalStatus)
+            </td>
+          @*  <td>
+                <a asp-action="Edit" asp-route-id="@item.DocumentId">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.DocumentId">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.DocumentId">Delete</a>
+            </td>*@
+        </tr>
+}
+    </tbody>
+</table>

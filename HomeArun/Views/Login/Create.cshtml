@@ -1,0 +1,77 @@
+﻿
+@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+    
+}
+<html>
+    <head>
+         <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>HomeLoan </title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" />
+<style>
+div {
+  
+  padding: 10px 2px 10px 10px;
+ 
+}
+label {
+    width:100px;
+    display: inline-block;
+}
+button
+{
+    margin-left:150px;
+}
+
+th,td {
+  padding: 30px;
+  text-align: left;
+}
+
+
+ 
+
+
+
+</style>
+</head>
+<body>
+   
+
+<H1>LOGIN</H1>
+@using(Html.BeginForm())
+{
+     
+    <div>
+       
+      
+     <label>AppNumber</label>
+      <input type=number name="apnumber" id="apnumber" style="border-radius:3px"><br>
+     
+    
+    </div>
+    
+      <div >
+     
+     <label>Password</label>
+     <input type="password" name="pass" id="password" style="border-radius:3px"><br>
+     </div>
+  
+      <div id=buttonBlock>
+    <button style="border-radius:2px" name = "cal"  value = "submit">LOGIN</button><br>
+      </div>
+   
+ }
+ <div style="color:red">
+    @ViewBag.Error <br />
+</div>
+
+<div>
+    <a asp-controller="PersonalDetails" asp-action="Create">New User ? Apply for a Loan Now</a>
+</div>
+</body>
+</html>
