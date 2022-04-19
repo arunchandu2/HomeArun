@@ -13,11 +13,8 @@ namespace HomeArun.Controllers
         {
             _db = db;
         }
-        public IActionResult Index()
-        {
-            var objCtegoryList = _db.Personals;
-            return View(objCtegoryList);
-        }
+
+        #region PersonalDetails
         [HttpGet]
         public IActionResult Create()
         {
@@ -26,12 +23,24 @@ namespace HomeArun.Controllers
 
         [HttpPost]
 
-        public IActionResult Create(PersonalDetails obj)
-        {
+        public IActionResult Create(string fname, string mname, string lname, string ename, string pname, string phname, string dname)
+        {            PersonalDetails obj = new PersonalDetails();
+           DateTime dname1 = DateTime.Parse(dname);
+            obj.FirstName = fname;
+            obj.MiddleName = mname;
+            obj.LastName = lname;
+            obj.EmailId = ename;
+            obj.Password = pname;
+            obj.PhoneNumber = phname;
+            obj.Dob = dname1;
+
+
+
             _db.Personals.Add(obj);
             _db.SaveChanges();
             return View();
         }
+        #endregion
 
     }
 }

@@ -25,6 +25,8 @@ namespace HomeArun.Data
 
         public DbSet<Login> logins { get; set; }
 
+        public DbSet<Admin> Admins { get; set; }
+
 
 
     }

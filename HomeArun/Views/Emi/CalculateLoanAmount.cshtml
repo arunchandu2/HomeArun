@@ -4,7 +4,7 @@
 @{
 }
 
-<style>
+@*<style>
 div {
   
   padding: 10px 2px 10px 10px;
@@ -52,4 +52,90 @@ button
      <label>TotalLoan</label>
     <input type=number name="Eligibility" id="Eligibility"  value =  "@ViewBag.Res" style = "border-radius:3px">
     </div>
+}*@
+
+ <html> 
+      <head>
+<style>
+    body, html {
+  height: 100%;
 }
+* {
+  box-sizing: border-box;
+}
+.container {
+  position: absolute;
+  left: 400px;
+  margin: 20px;
+  max-width: 300px;
+  padding: 16px;
+  background-color: white;
+}
+input[type=number] {
+  width: 100%;
+  padding: 15px;
+  margin: 5px 0 22px 0;
+  border: none;
+  background: #f1f1f1;
+}
+
+input[type=number]:focus {
+  background-color: #ddd;
+  outline: none;
+}
+
+.btn {
+  background-color: #04AA6D;
+  color: white;
+  padding: 16px 20px;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  opacity: 0.9;
+}
+
+.btn:hover {
+  opacity: 1;
+}
+
+
+ 
+
+
+
+</style>
+</head>
+<body>
+  
+
+@using(Html.BeginForm(new { @class="container" }))
+{
+    <H1>Eligibility Calculator </H1>
+
+
+
+
+
+
+       
+  
+     
+     <label>Income</label>
+     <input type=number name="income" id="Income"  value ="@ViewBag.inco"><br>
+ 
+    
+      <label>ROI</label>
+     <input type=number name="ROI1" id="ROI" value = "@ViewBag.rate1" ><br>
+     
+
+    
+    <button class ="btn" name = "cal" value = "calc" >Calculate</button><br>
+    
+    
+     <label>TotalLoan</label>
+      <input type=number name="Eligibility" id="Eligibility"  value =  "@ViewBag.Res" >
+}
+</body>
+</html> 
+
+    

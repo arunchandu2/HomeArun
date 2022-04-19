@@ -17,8 +17,82 @@
     h2{
         color:brown;
     }
+    <style>
+body {
+background-image: url('https://nunl.in/assets/images/ourteam/5f047556a797a.png');
+background-repeat: no-repeat;
+background-attachment: fixed;
+background-size: 100% 100%;
+}
+.container1 {
+position: absolute;
+bottom:30%;
+left: 40%;
+margin: 20px;
+max-width: 300px;
+padding: 16px;
+}
+html, body {
+min-height: 100%;
+}
+
+
+
+.btn-item, button {
+padding: 10px 5px;
+margin-top: 20px;
+border-radius: 5px;
+border: none;
+background: #26a9e0;
+text-decoration: none;
+font-size: 15px;
+font-weight: 400;
+color: #fff;
+}
+.btn-item {
+display: inline-block;
+margin: 20px 5px 0;
+}
+button {
+width: 100%;
+}
+button:hover, .btn-item:hover {
+background: #85d6de;
+}
+media (min-width: 568px) {
+html, body {
+height: 100%;
+}
+.main-block {
+flex-direction: row;
+height: calc(100% - 50px);
+}
+.left-part, form {
+flex: 1;
+height: auto;
+}
+.
 
 </style>
+<div class="container1">
+
+
+
+<a  asp-action = "Create1" asp-controller = "IncomeDetails"><button type="Submit" > APPLY NOW </button></a>
+
+
+
+
+
+<a asp-action = "calculateloanamount" asp-controller = "Emi"><button type="Submit" href="/" >ELIGIBILITY CALCULATOR</button></a>
+
+
+
+<a asp-action = "calculate" asp-controller = "Emi"><button type="Submit" href="/" >EMI CALACULATOR</button></a>
+
+
+
+</div>
 
 <h1 class="mainpage">
  <span style="color:#FF0000">H</span>
@@ -33,3 +107,4 @@
 </h1>
 <h2>Take a step into your dream home</h2><br>
 <img src="https://media.istockphoto.com/vectors/workers-repairing-roof-vector-id1207102862?k=20&m=1207102862&s=612x612&w=0&h=hHQ3QmJkC435IA-IxfV79y_6oF_9pmOjIssEONzrPng=">
+

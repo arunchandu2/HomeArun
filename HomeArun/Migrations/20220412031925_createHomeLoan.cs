@@ -5,7 +5,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace HomeArun.Migrations
 {
-    public partial class createHome1 : Migration
+    public partial class createHomeLoan : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {

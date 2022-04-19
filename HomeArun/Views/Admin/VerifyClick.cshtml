@@ -1,0 +1,14 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+       ViewData["Title"] = "AdminPage";
+    Layout = "~/Views/Admin/AdminPageLayout.cshtml";
+}
+<h1>Document Verification</h1>
+<form asp-action="Verifyclick">
+    <center>
+        <input name="button" type="submit" value="Verify" class="btn btn-success" />
+        <input name="button" type="submit" value="Reject" class="btn btn-success" />
+    </center>
+</form>

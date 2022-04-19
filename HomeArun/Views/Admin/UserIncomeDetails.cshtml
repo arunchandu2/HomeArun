@@ -1,0 +1,51 @@
+﻿@model IEnumerable<IncomeDetails>
+@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+       ViewData["Title"] = "AdminPage";
+    Layout = "~/Views/Admin/AdminPageLayout.cshtml";
+}
+<style>
+    table, th, td {
+  border: 1px solid black;
+  border-collapse: collapse;
+}
+</style>
+
+
+<h1>IncomeDetails</h1>
+
+<table>
+    
+    <tr>
+        <th>Application ID</th>
+        <th>PropertyLocation</th>
+        <th>PropertyType</th>
+        <th>EstimatedAmount</th>
+        <th>RetirementAge</th>
+        <th>OrganizationType</th>
+        <th>EmployerName</th>
+      
+
+       
+     </tr>
+     @foreach(var i in Model)
+    {
+     <tr>
+         <td>@i.ApplicationId
+         </td>
+         <td>@i.PropertyLocation
+         </td>
+         <td>@i.PropertyType</td>
+         <td>@i.EstimatedAmount</td>
+         <td>@i.RetirementAge</td>
+         <td>@i.OrganizationType</td>
+         <td>@i.EmployerName</td>
+       
+
+     </tr>
+    }
+</table>
+
+

@@ -1,0 +1,47 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+       ViewData["Title"] = "AdminPage";
+    Layout = "~/Views/Admin/AdminPageLayout.cshtml";
+}
+<style>
+    table, th, td {
+  border: 1px solid black;
+  border-collapse: collapse;
+}
+</style>
+
+
+<h1>PersonalDetails</h1>
+
+<table>
+    
+    <tr>
+        <th>ApplicationID</th>
+        <th>FirstName</th>
+        <th>MiddleName</th>
+        <th>LastName</th>
+        <th>Email-ID</th>
+        <th>Password</th>
+        <th>PhoneNumber</th>
+        <th>Dob</th>
+
+       
+     </tr>
+     @foreach(var i in Model)
+    {
+     <tr>
+         <td>@i.ApplicationID
+         </td>
+         <td>@i.FirstName</td>
+         <td>@i.MiddleName</td>
+         <td>@i.LastName</td>
+         <td>@i.EmailId</td>
+         <td>@i.Password</td>
+         <td>@i.PhoneNumber</td>
+         <td>@i.Dob</td>
+
+     </tr>
+    }
+</table>

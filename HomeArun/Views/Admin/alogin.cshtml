@@ -1,18 +1,19 @@
-﻿
-@*
+﻿@*
     For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 *@
 @{
-    
 }
 <html>
     <head>
-   
-         
-    <link rel="stylesheet" href="~/css/LoginStyling.css" />
+   @* <head>
+         <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>HomeLoan </title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" />*@
 
 
-@*<style>
+<style>
 
 body, html {
   height: 100%;
@@ -55,7 +56,7 @@ input[type=number]:focus, input[type=password]:focus {
 .btn:hover {
   opacity: 1;
 }
-</style>*@
+</style>
 </head>
 
 
@@ -67,13 +68,13 @@ input[type=number]:focus, input[type=password]:focus {
 @using(Html.BeginForm(new { @class="container" }))
 {
     
-<H1>User Login</H1>
+<H1>Admin Login</H1>
      
     <div>
        
       
      <label>ApplicationNumber</label>
-      <input type="number" name="apnumber" id="apnumber" ><br>
+      <input type="number" name="apnumber1" id="apnumber" ><br>
      
     
     </div>
@@ -81,7 +82,7 @@ input[type=number]:focus, input[type=password]:focus {
       <div >
      
      <label>Password</label>
-     <input type="password" name="pass" id="password" ><br>
+     <input type="password" name="pass1" id="password" ><br>
      </div>
   
       <div id=buttonBlock>
@@ -93,9 +94,7 @@ input[type=number]:focus, input[type=password]:focus {
     @ViewBag.Error <br />
 </div>
 
-<div>
-    <a asp-controller="IncomeDetails" asp-action="Create1">New User ? Apply for a Loan Now</a>
-</div>
+
  
 </body>
 </html>

@@ -25,6 +25,8 @@ namespace HomeArun.Controllers
             return View();
         }
 
+        #region Uploaded Documents
+
         // GET: UploadedDocuments
         public async Task<IActionResult> Index()
         {
@@ -150,6 +152,7 @@ namespace HomeArun.Controllers
 
             }
         }
+        #endregion
     }
 }
 

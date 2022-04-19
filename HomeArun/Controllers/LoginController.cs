@@ -12,21 +12,95 @@ namespace HomeArun.Controllers
         {
             _db = db;
         }
-        public IActionResult LoanTracker()
+
+        #region ProfilePage
+
+        public IActionResult Profile()
         {
+            string aid;
+            int aid1;
+            aid = (TempData["appid1"]).ToString();
+            aid1 = int.Parse(aid);
+            var firstname = (from d in _db.Personals
+                             where d.ApplicationID == aid1
+                             select d.FirstName).FirstOrDefault();
+            var middlename = (from d in _db.Personals
+                              where d.ApplicationID == aid1
+                              select d.MiddleName).FirstOrDefault();
+
+            var lastname = (from c in _db.Personals
+                            where c.ApplicationID == aid1
+                            select c.LastName).FirstOrDefault();
+
+            var emailid = (from c in _db.Personals
+                            where c.ApplicationID == aid1
+                            select c.EmailId).FirstOrDefault();
+
+            var phonenumber = (from c in _db.Personals
+                            where c.ApplicationID == aid1
+                            select c.PhoneNumber).FirstOrDefault();
+
+            var dateofbirth = (from c in _db.Personals
+                            where c.ApplicationID == aid1
+                            select c.Dob).FirstOrDefault();
+            //var firstname = (from d in _db.Incomes
+            //                 where d.ApplicationID == aid1
+                             //select d.FirstName).FirstOrDefault();
+            ViewBag.fname1 = firstname;
+            ViewBag.mname1 = middlename;
+            ViewBag.lname1 = lastname;
+            ViewBag.email1 = emailid;
+            ViewBag.phn1 = phonenumber;
+            ViewBag.date1 = dateofbirth;
+
+
             return View();
         }
-        //public 
-        public IActionResult Index()
+        #endregion
+
+
+        #region LoanTracker
+        public IActionResult LoanTracker()
         {
-            var objCtegoryList = _db.Personals;
-            return View(objCtegoryList);
+            
+           string  aid = (TempData["appidT"]).ToString();
+           int  aid1 = int.Parse(aid);
+
+
+
+            var doc = _db.UploadedDocuments.Find(aid1);
+
+                if (doc.DocumentverifiedStatus == "Sent for Verification")
+                {
+                ViewBag.Tracker = "Sent for Verification";
+                }
+                else if (doc.DocumentverifiedStatus == "Documnet Verification Failed")
+                {
+                ViewBag.Tracker = doc.DocumentverifiedStatus;
+                }
+
+                else if (doc.DocumentverifiedStatus == "Document Verified" && doc.LoanApprovalStatus == "Sent for Approval")
+                {
+                ViewBag.Tracker = "Verified and Sent for Final Approval";
+                }
+                else if (doc.LoanApprovalStatus == "Loan Approved" || doc.LoanApprovalStatus == "Loan Rejected")
+                {
+                ViewBag.Tracker = doc.LoanApprovalStatus;
+                }
+
+               
+                _db.SaveChanges();
+                return View();
+
+            
+
+            
         }
-        //public IActionResult CustomerPage()
-        //{
-        //    return View();
-        //}
-        //[HttpPost]
+        #endregion
+
+
+        #region CustomerPage
+
         public IActionResult CustomerPage()
 
         {
@@ -48,6 +122,10 @@ namespace HomeArun.Controllers
             ViewBag.lname1 = lastname;
             return View();
         }
+
+        #endregion
+
+        #region UserPage Login and Logout
         [HttpGet]
         public IActionResult Create()
         {
@@ -70,8 +148,11 @@ namespace HomeArun.Controllers
                                               where pass1.ApplicationID == a
                                               select pass1.Password).FirstOrDefault();
 
+          
 
             TempData["appid"] = a;
+            TempData["appid1"] = a;
+            TempData["appidT"] = a;
             if (password1 != null && password1.Equals(pass))
             {
                 return RedirectToAction("CustomerPage") ;
@@ -87,6 +168,12 @@ namespace HomeArun.Controllers
 
 
         }
-    
+        public IActionResult Logout()
+        {
+            return RedirectToAction("Create");
+
+        }
+        #endregion
+
     }
 }

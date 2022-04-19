@@ -3,13 +3,15 @@
 *@
 @{
 }
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  
-    <link rel="stylesheet" href="~/css/LoginPage.css" />
-  @* <style>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>HomeLoan </title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" />
+   <style>
 body {
   font-family: "Lato", sans-serif;
 }
@@ -57,16 +59,20 @@ body {
   .sidenav {padding-top: 15px;}
   .sidenav a {font-size: 18px;}
 }
-</style>*@
+</style>
 </head>
 <body>
     
 
 <div id="mySidenav" class="sidenav">
   <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-     <a asp-controller="Login" asp-action="Profile">PROFILE</a>
-        <a asp-controller="Login" asp-action="LoanTracker">LOAN TRACKER</a>
-        <a asp-controller="Login" asp-action="Logout">LOGOUT</a>
+    <a  asp-controller="Admin" asp-action="UserIncomeDetails">User Income Details</a>
+        <a  asp-controller="Admin" asp-action="UserPersonalDetails">User Personal Details</a>
+
+    <a  asp-controller="Admin" asp-action="DocVerify">Verification</a>
+        <a  asp-controller="Admin" asp-action="Approval">Loan Approval</a>
+        <a  asp-controller="Admin" asp-action="alogout">Logout</a>
+        
 </div>
 
 <div id="main">

@@ -106,6 +106,10 @@
                          <li class="nav-item">
                             <a class="nav-link text-dark" asp-area="" asp-controller="Login" asp-action="create">Login</a>
                         </li>
+                          <li class="nav-item">
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Admin" asp-action="alogin">Admin</a>
+                        </li>
+
                          <li class="nav-item">
                             <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="faq">FaQ</a>
                         </li>
@@ -128,12 +132,12 @@
             @RenderBody()
         </main>
     </div>
-
+@*
     <footer class="border-top footer text-muted">
-        <div class="container">
+        <div class="container1">
             &copy; 2022 - HomeLoanManagementSysytem - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
         </div>
-    </footer>
+    </footer>*@
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script src="~/js/site.js" asp-append-version="true"></script>

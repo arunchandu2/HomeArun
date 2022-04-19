@@ -12,8 +12,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace HomeArun.Migrations
 {
     [DbContext(typeof(ApplicationDbcontext))]
-    [Migration("20220410200518_createHome1")]
-    partial class createHome1
+    [Migration("20220412031925_createHomeLoan")]
+    partial class createHomeLoan
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -24,7 +24,7 @@ namespace HomeArun.Migrations
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder, 1L, 1);
 
-            modelBuilder.Entity("HomeLoanManagementSysytem.Models.IncomeDetails", b =>
+            modelBuilder.Entity("HomeArun.Models.IncomeDetails", b =>
                 {
                     b.Property<int>("ApplicationId")
                         .ValueGeneratedOnAdd()
@@ -59,7 +59,7 @@ namespace HomeArun.Migrations
                     b.ToTable("Incomes");
                 });
 
-            modelBuilder.Entity("HomeLoanManagementSysytem.Models.LoanDetails", b =>
+            modelBuilder.Entity("HomeArun.Models.LoanDetails", b =>
                 {
                     b.Property<int?>("LoanId")
                         .ValueGeneratedOnAdd()
@@ -84,7 +84,7 @@ namespace HomeArun.Migrations
                     b.ToTable("LoanDetails");
                 });
 
-            modelBuilder.Entity("HomeLoanManagementSysytem.Models.LoanTracker", b =>
+            modelBuilder.Entity("HomeArun.Models.LoanTracker", b =>
                 {
                     b.Property<int>("ApplicationId")
                         .ValueGeneratedOnAdd()
@@ -101,7 +101,7 @@ namespace HomeArun.Migrations
                     b.ToTable("LoanTrackers");
                 });
 
-            modelBuilder.Entity("HomeLoanManagementSysytem.Models.Login", b =>
+            modelBuilder.Entity("HomeArun.Models.Login", b =>
                 {
                     b.Property<int?>("ApplicationId")
                         .ValueGeneratedOnAdd()
@@ -117,42 +117,7 @@ namespace HomeArun.Migrations
                     b.ToTable("logins");
                 });
 
-            modelBuilder.Entity("HomeLoanManagementSysytem.Models.PersonalDetails", b =>
-                {
-                    b.Property<int?>("ApplicationID")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int?>("ApplicationID"), 1L, 1);
-
-                    b.Property<DateTime>("Dob")
-                        .HasColumnType("datetime2");
-
-                    b.Property<string>("EmailId")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("FirstName")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("LastName")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("MiddleName")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("Password")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("PhoneNumber")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.HasKey("ApplicationID");
-
-                    b.ToTable("Personals");
-                });
-
-            modelBuilder.Entity("HomeLoanManagementSysytem.Models.UploadedDocument", b =>
+            modelBuilder.Entity("HomeArun.Models.UploadedDocument", b =>
                 {
                     b.Property<int>("ApplicationId")
                         .ValueGeneratedOnAdd()
@@ -196,6 +161,41 @@ namespace HomeArun.Migrations
                     b.HasKey("ApplicationId");
 
                     b.ToTable("UploadedDocuments");
+                });
+
+            modelBuilder.Entity("HomeLoanArun.Models.PersonalDetails", b =>
+                {
+                    b.Property<int?>("ApplicationID")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int?>("ApplicationID"), 1L, 1);
+
+                    b.Property<DateTime>("Dob")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("EmailId")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("FirstName")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("LastName")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("MiddleName")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Password")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("PhoneNumber")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("ApplicationID");
+
+                    b.ToTable("Personals");
                 });
 #pragma warning restore 612, 618
         }

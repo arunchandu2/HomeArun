@@ -5,75 +5,40 @@
 *@
 @{
 }
-<style>
-div {
-  
-  padding: 10px 2px 10px 10px;
- 
+<!DOCTYPE html>
+<html>
+<head>
+ <link rel="stylesheet" href="~/css/IncomeDetails.css" />
+</head>
+<body>
+
+
+@using(Html.BeginForm("Create1","IncomeDetails",FormMethod.Post, new{ @class="container1" }))
+    {
+
+
+@*<form action="/" class = "container1" method = "post">*@
+<div class="title">
+
+
+
+<h2>Income details</h2>
+</div>
+<div class="info">
+<input type="text" name="lname" placeholder="Property Location">
+<input type="text" name="tname" placeholder="Property Type">
+<input type="number" name="ename" placeholder="Estimated Amount">
+<input type="number" name="rname" placeholder="Retirement Age">
+<input type="text" name="oname" placeholder="Organization Type">
+<input type="text" name="enname" placeholder="Employee Name">
+
+
+
+<button type="Submit" >Submit</button>
+<a asp-controller ="PersonalDetails" asp-action ="create">Next</a>
+</div>
 }
-label {
-    width:100px;
-    display: inline-block;
-}
-button
-{
-    margin-left:150px;
-}
-
-th,td {
-  padding: 30px;
-  text-align: left;
-}
-
- 
-
-
-
-</style>
-<form method = "post">
-    <div>
-        <h2 class = "text-primary">Create Personal</h2>
-    </div>
- 
-   
-    <div>
-        <label asp-for ="PropertyLocation"></label>
-        <input asp-for ="PropertyLocation" />
-    </div>
-    <br />
-     <div>
-        <label asp-for ="PropertyType"></label>
-        <input asp-for ="PropertyType" />
-    </div>
-    <br />
-     <div>
-        <label asp-for ="EstimatedAmount"></label>
-        <input asp-for ="EstimatedAmount" />
-    </div>
-    <br />
-     <div>
-        <label asp-for ="RetirementAge"></label>
-        <input asp-for ="RetirementAge" />
-    </div>
-    <br />
-      <div>
-        <label asp-for ="OrganizationType"></label>
-        <input asp-for ="OrganizationType" />
-    </div>
-    <br />
-      <div>
-        <label asp-for ="EmployerName"></label>
-        <input asp-for ="EmployerName" />
-    </div>
-    <br />
-    
-   
-    <button type = "submit">Submit</button>
-    <br />
-   <a asp-controller ="PersonalDetails" asp-action ="create">Back to List</a>
-
-
-
-</form>
+</body>
+</html>
 
 

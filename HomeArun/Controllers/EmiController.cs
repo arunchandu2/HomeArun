@@ -6,8 +6,10 @@ namespace HomeArun.Controllers
     public class EmiController : Controller
     {
 
+        #region Emi calculator
 
-      public IActionResult Calculate()
+
+        public IActionResult Calculate()
         {
             return View();
         }
@@ -17,6 +19,8 @@ namespace HomeArun.Controllers
         [HttpPost]
         public IActionResult Calculate(string loan1,string Tenure,string ROI)
         {
+            
+            //string number1 = Request.Form["loan1"];
             int pa = Convert.ToInt32(loan1);
             float n = float.Parse(Tenure);
             float r = float.Parse(ROI);
@@ -34,11 +38,16 @@ namespace HomeArun.Controllers
            
            //Console.WriteLine(emi);
             ViewBag.Result = emi;
-
+            ViewBag.laon = loan1;
+            ViewBag.ten = Tenure;
+            ViewBag.rate = ROI;
+            
             return View();
 
         }
+        #endregion
 
+        #region Eligibility Calculator
         //get method
         public IActionResult CalculateLoanAmount()
         {
@@ -59,10 +68,16 @@ namespace HomeArun.Controllers
                 totalloan = 60 * (roi * inc);
             }
             ViewBag.Res = totalloan;
+            ViewBag.inco = income;
+            ViewBag.rate1 = ROI1;
+           
             return View();
 
 
+
+
         }
+        #endregion
 
 
 
